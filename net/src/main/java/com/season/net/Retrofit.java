@@ -8,7 +8,9 @@ import java.lang.reflect.Proxy;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class NetRequest {
+public class Retrofit {
+
+    public String baseUrl = "https://api.randomuser.me/";
 
     public <T> T create(final Class<T> service) {
         return (T)
