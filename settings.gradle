@@ -1,0 +1,3 @@
+rootProject.name = "SimpleNet"
+include ':app'
+include ':net'
