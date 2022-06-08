@@ -1,7 +1,9 @@
 package com.season.simplenet;
 
 import com.season.net.Retrofit;
+import com.season.net.http.Field;
 import com.season.net.http.GET;
+import com.season.net.http.POST;
 import com.season.net.http.Path;
 import com.season.net.http.Query;
 
@@ -22,6 +24,9 @@ public class ExampleUnitTest {
         String test(@Path ("id")String id, @Query("name") String name);
         @GET
         String user(@Query ("nat")String nat, @Query("results") String results);
+
+        @POST("user/edit")
+        String updateUser(@Field("user") String user, @Field("name") String name);
     }
 
     @Before
@@ -33,6 +38,6 @@ public class ExampleUnitTest {
 
     @Test
     public void test() {
-        System.out.println(service.user("US","1"));
+        System.out.println(service.updateUser("US","1"));
     }
 }
